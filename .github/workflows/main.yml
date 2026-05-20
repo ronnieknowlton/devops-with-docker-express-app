@@ -27,3 +27,6 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/express-app:latest
+
+      - name: Trigger Render deployment
+        run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
